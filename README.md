@@ -1,14 +1,28 @@
-# Weather App React
+# 🌦️ Weather App
 
-A simple weather application built using React and Tailwind CSS.
+A responsive weather application built with React, Tailwind CSS, and OpenWeather API. Users can search any city and get real-time weather information including temperature, humidity, and wind speed.
 
-## Features
+## 🚀 Live Demo
+
+https://raju-weather-app.netlify.app/
+
+## ✨ Features
 
 - Search weather by city
-- Live API data
-- Responsive UI
-- Built with React + Tailwind
+- Real-time weather data
+- Responsive design
+- Clean and modern UI
 
-## Live Demo
+## 🛠️ Tech Stack
 
-https://your-netlify-link.netlify.app/
+- React.js
+- Tailwind CSS
+- JavaScript
+- Vite
+- OpenWeather API
+
+## 👨‍💻 Author
+
+Raju Gupta
+
+GitHub: https://github.com/mrraju854
