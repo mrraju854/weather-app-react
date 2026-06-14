@@ -12,7 +12,6 @@ const App = () => {
 
   const isDark = theme === "dark";
 
-  // 🌍 AUTO LOCATION
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (pos) => {
       const lat = pos.coords.latitude;
@@ -35,7 +34,6 @@ const App = () => {
     });
   }, []);
 
-  // 🔍 SEARCH
   const fetchWeather = async (city) => {
     try {
       const res = await axios.get(
@@ -53,7 +51,6 @@ const App = () => {
         wind: data.wind.speed,
       });
 
-      // 📜 HISTORY
       const newHistory = [data.name, ...history.filter((c) => c !== data.name)];
       setHistory(newHistory);
       localStorage.setItem("history", JSON.stringify(newHistory));
@@ -63,13 +60,11 @@ const App = () => {
     }
   };
 
-  // 📜 LOAD HISTORY
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("history")) || [];
     setHistory(saved);
   }, []);
 
-  // 🌗 TOGGLE
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
@@ -79,7 +74,6 @@ const App = () => {
       className={`min-h-screen flex flex-col items-center px-4 py-10 transition-all duration-500
       ${isDark ? "bg-[#1e293b]" : "bg-sky-200"}`}
     >
-      {/* Toggle */}
       <button
         onClick={toggleTheme}
         className={`absolute top-5 right-5 px-4 py-2 rounded-lg font-semibold
@@ -97,7 +91,6 @@ const App = () => {
 
       <SearchBox onSearch={fetchWeather} theme={theme} />
 
-      {/* HISTORY */}
       <div className="flex flex-wrap gap-2 mt-4">
         {history.map((city, i) => (
           <button
